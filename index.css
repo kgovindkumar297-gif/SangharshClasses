@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Brand Colors - Red, Blue, White theme */
+        --brand-primary: 0.45 0.22 15;        /* Deep Red */
+        --brand-secondary: 0.50 0.18 250;     /* Royal Blue */
+        --brand-accent: 0.55 0.15 200;        /* Cyan Blue */
+        
+        /* Light Mode - Soft academic theme with enhanced readability */
+        --background: 0.99 0.001 240;          /* Pure off-white with minimal tint */
+        --foreground: 0.18 0.020 270;          /* Dark Blue-Gray for excellent contrast */
+        
+        --card: 1 0 0;                         /* Pure White for cards */
+        --card-foreground: 0.18 0.020 270;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.18 0.020 270;
+        
+        --primary: 0.45 0.22 15;               /* Brand Red */
+        --primary-foreground: 1 0 0;
+        
+        --secondary: 0.50 0.18 250;            /* Brand Blue */
+        --secondary-foreground: 1 0 0;
+        
+        --muted: 0.97 0.003 270;
+        --muted-foreground: 0.48 0.015 270;
+        
+        --accent: 0.55 0.15 200;               /* Cyan Accent */
+        --accent-foreground: 1 0 0;
+        
+        --destructive: 0.55 0.25 25;
+        --destructive-foreground: 1 0 0;
+        
+        --border: 0.92 0.003 270;
+        --input: 0.92 0.003 270;
+        --ring: 0.45 0.22 15;
+        
+        --chart-1: 0.45 0.22 15;
+        --chart-2: 0.50 0.18 250;
+        --chart-3: 0.55 0.15 200;
+        --chart-4: 0.60 0.20 30;
+        --chart-5: 0.65 0.18 280;
+    }
+
+    .dark {
+        --background: 0.15 0.015 270;
+        --foreground: 0.98 0 0;
+        
+        --card: 0.20 0.015 270;
+        --card-foreground: 0.98 0 0;
+        
+        --popover: 0.18 0.015 270;
+        --popover-foreground: 0.98 0 0;
+        
+        --primary: 0.55 0.22 15;
+        --primary-foreground: 0.98 0 0;
+        
+        --secondary: 0.60 0.18 250;
+        --secondary-foreground: 0.98 0 0;
+        
+        --muted: 0.25 0.015 270;
+        --muted-foreground: 0.70 0.01 270;
+        
+        --accent: 0.65 0.15 200;
+        --accent-foreground: 0.98 0 0;
+        
+        --destructive: 0.60 0.25 25;
+        --destructive-foreground: 0.98 0 0;
+        
+        --border: 0.30 0.015 270;
+        --input: 0.30 0.015 270;
+        --ring: 0.55 0.22 15;
+        
+        --chart-1: 0.55 0.22 15;
+        --chart-2: 0.60 0.18 250;
+        --chart-3: 0.65 0.15 200;
+        --chart-4: 0.70 0.20 30;
+        --chart-5: 0.75 0.18 280;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    /* Clean Academic Background with Gentle Gradient */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background: linear-gradient(135deg, 
+            oklch(1 0 0) 0%, 
+            oklch(0.99 0.002 240) 25%,
+            oklch(0.98 0.003 235) 50%,
+            oklch(0.97 0.004 230) 75%,
+            oklch(0.96 0.005 225) 100%
+        );
+        pointer-events: none;
+    }
+    
+    /* Enhanced Mathematical Symbols Background - More distributed and varied */
+    body::after {
+        content: 'x y z a b c ∫ ∂ ∑ ∏ √ ∛ ∜ ÷ × + − = ≠ ≈ ≡ ≤ ≥ < > ± ∓ ∞ π e φ α β γ δ ε ζ η θ ι κ λ μ ν ξ ο ρ σ τ υ φ χ ψ ω Δ Σ Π Ω ∈ ∉ ⊂ ⊃ ⊆ ⊇ ∪ ∩ ∅ ∀ ∃ ∄ ∴ ∵ ⊥ ∥ ∠ ∡ ° ′ ″ ‴ x² y³ z⁴ aⁿ x₁ y₂ z₃ log ln sin cos tan cot sec csc sinh cosh tanh lim sup inf max min f(x) g(x) h(x) dy/dx d²y/dx² ∫f(x)dx ∑ᵢ₌₁ⁿ ∏ᵢ₌₁ⁿ √x ∛y ∜z |x| ‖x‖ ⌊x⌋ ⌈x⌉ {x} [x] (x) ⟨x⟩ x y z a b c ∫ ∂ ∑ ∏ √ ∛ ∜ ÷ × + − = ≠ ≈ ≡ ≤ ≥ < > ± ∓ ∞ π e φ α β γ δ ε ζ η θ ι κ λ μ ν ξ ο ρ σ τ υ φ χ ψ ω Δ Σ Π Ω ∈ ∉ ⊂ ⊃ ⊆ ⊇ ∪ ∩ ∅ ∀ ∃ ∄ ∴ ∵ ⊥ ∥ ∠ ∡ ° ′ ″ ‴ x² y³ z⁴ aⁿ x₁ y₂ z₃ log ln sin cos tan cot sec csc sinh cosh tanh lim sup inf max min f(x) g(x) h(x) dy/dx d²y/dx² ∫f(x)dx ∑ᵢ₌₁ⁿ ∏ᵢ₌₁ⁿ √x ∛y ∜z |x| ‖x‖ ⌊x⌋ ⌈x⌉ {x} [x] (x) ⟨x⟩ x y z a b c ∫ ∂ ∑ ∏ √ ∛ ∜ ÷ × + − = ≠ ≈ ≡ ≤ ≥ < > ± ∓ ∞ π e φ α β γ δ ε ζ η θ ι κ λ μ ν ξ ο ρ σ τ υ φ χ ψ ω Δ Σ Π Ω ∈ ∉ ⊂ ⊃ ⊆ ⊇ ∪ ∩ ∅ ∀ ∃ ∄ ∴ ∵ ⊥ ∥ ∠ ∡ ° ′ ″ ‴ x² y³ z⁴ aⁿ x₁ y₂ z₃ log ln sin cos tan cot sec csc sinh cosh tanh lim sup inf max min f(x) g(x) h(x) dy/dx d²y/dx² ∫f(x)dx ∑ᵢ₌₁ⁿ ∏ᵢ₌₁ⁿ √x ∛y ∜z |x| ‖x‖ ⌊x⌋ ⌈x⌉ {x} [x] (x) ⟨x⟩ x y z a b c ∫ ∂ ∑ ∏ √ ∛ ∜ ÷ × + − = ≠ ≈ ≡ ≤ ≥ < > ± ∓ ∞ π e φ α β γ δ ε ζ η θ ι κ λ μ ν ξ ο ρ σ τ υ φ χ ψ ω Δ Σ Π Ω ∈ ∉ ⊂ ⊃ ⊆ ⊇ ∪ ∩ ∅ ∀ ∃ ∄ ∴ ∵ ⊥ ∥ ∠ ∡ ° ′ ″ ‴ x² y³ z⁴ aⁿ x₁ y₂ z₃ log ln sin cos tan cot sec csc sinh cosh tanh lim sup inf max min f(x) g(x) h(x) dy/dx d²y/dx² ∫f(x)dx ∑ᵢ₌₁ⁿ ∏ᵢ₌₁ⁿ √x ∛y ∜z |x| ‖x‖ ⌊x⌋ ⌈x⌉ {x} [x] (x) ⟨x⟩';
+        position: fixed;
+        top: -5%;
+        left: -5%;
+        width: 110%;
+        height: 110%;
+        z-index: -1;
+        font-size: 1.75rem;
+        line-height: 3.5rem;
+        color: oklch(0.82 0.008 240);
+        opacity: 0.06;
+        word-wrap: break-word;
+        overflow: hidden;
+        padding: 3rem;
+        filter: blur(0.5px);
+        pointer-events: none;
+        font-family: 'Times New Roman', 'Georgia', serif;
+        letter-spacing: 2rem;
+        word-spacing: 2.5rem;
+        text-align: justify;
+        transform: rotate(-2deg);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold;
+    }
+}
+
+@layer utilities {
+    .animate-fade-in {
+        animation: fadeIn 1s ease-in;
+    }
+    
+    .animate-bounce-slow {
+        animation: bounce 3s infinite;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Custom scrollbar with academic theme */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: oklch(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+    background: oklch(var(--brand-primary));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: oklch(var(--brand-secondary));
+}
+
+/* Ensure cards and components have clean backgrounds */
+.bg-card {
+    background: oklch(var(--card));
+}
+
+.bg-background {
+    background: oklch(var(--background));
+}
+
+/* Enhanced shadow for premium feel */
+.shadow-academic {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-academic-lg {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
