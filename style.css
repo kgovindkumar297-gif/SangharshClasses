@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #333;
+}
+
+.navbar {
+  background: #0a3d62;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.hero {
+  background: linear-gradient(to right, #0a3d62, #38ada9);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.btn {
+  background: #2ecc71;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.section {
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.light {
+  background: #f4fdfb;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery-box {
+  background: #dff9fb;
+  padding: 40px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.contact-form {
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-form button {
+  background: #0a3d62;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+
+.whatsapp {
+  display: inline-block;
+  margin-top: 15px;
+  color: #25D366;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #0a3d62;
+  color: white;
+}

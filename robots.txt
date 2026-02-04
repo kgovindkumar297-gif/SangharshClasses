@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sangharsh-classes-coaching-9ew.caffeine.xyz/sitemap.xml

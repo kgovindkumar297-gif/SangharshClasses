@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // SPA fallback: redirect to app root so the router can handle the path
+        // This enables deep linking on static hosts that serve 404.html for missing routes
+        (function() {
+            var path = window.location.pathname;
+            var search = window.location.search;
+            var hash = window.location.hash;
+            
+            // CRITICAL: Exclude static files from SPA fallback
+            // These should be served directly, not redirected to the app
+            var staticFiles = ['/sitemap.xml', '/robots.txt', '/favicon.ico'];
+            if (staticFiles.indexOf(path) !== -1) {
+                return; // Do not redirect static files
+            }
+            
+            // Only redirect if we're not already at root
+            if (path !== '/' && path !== '/index.html') {
+                // Preserve the original path in session storage so the app can restore it
+                sessionStorage.setItem('redirectPath', path + search + hash);
+                window.location.replace('/' + search + hash);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
